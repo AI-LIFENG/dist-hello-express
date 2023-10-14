@@ -12,7 +12,6 @@ docker exec -it EXPRESS bash
 
 - 安装vi
 ```sh
-:> /etc/apt/sources.list   &&\
   echo 'deb https://mirrors.tencent.com/debian/ bullseye main'                    > /etc/apt/sources.list   &&\
   echo 'deb https://mirrors.tencent.com/debian-security/ bullseye-security main' >> /etc/apt/sources.list   &&\
   echo 'deb https://mirrors.tencent.com/debian/ bullseye-updates main'           >> /etc/apt/sources.list   &&\
@@ -28,7 +27,7 @@ mkdir /www/hello-express && cd /www/hello-express && \
 
 - git该项目
 ```sh
-echo '/node_modules' >> .gitignore && \
+echo '/node_modules' >.gitignore && \
   git init && git add . && \
   git commit -m init && git branch -m master
 ```
@@ -61,8 +60,8 @@ app.listen(port, () => {
 - git该项目
 ```sh
 mkdir public && \
-  echo '*'           >> public/.gitignore && \
-  echo '!.gitignore'  > public/.gitignore && \
+  echo '*'            >public/.gitignore && \
+  echo '!.gitignore' >>public/.gitignore && \
 git add . && git commit -m impl
 ```
 
